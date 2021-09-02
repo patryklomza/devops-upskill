@@ -2,6 +2,10 @@
 # Created by https://www.toptal.com/developers/gitignore/api/jetbrains,linux,pycharm,python,flask
 # Edit at https://www.toptal.com/developers/gitignore?templates=jetbrains,linux,pycharm,python,flask
 
+### General ###
+*.db
+*.sqlite
+
 ### Flask ###
 instance/*
 !instance/.gitignore
