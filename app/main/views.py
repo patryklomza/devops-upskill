@@ -22,5 +22,5 @@ def hello_world():
 
 @main.route('/results', methods=['POST', 'GET'])
 def results():
-        messages = Message.query.all()
-        return render_template("form_results.html", messages=messages)
+    messages = Message.query.all()
+    return render_template("form_results.html", messages=messages)
