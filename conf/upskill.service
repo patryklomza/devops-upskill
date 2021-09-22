@@ -5,7 +5,7 @@ After=network.target
 [Service]
 User=ubuntu
 Group=www-data
-WorkingDirectory=/var/www/webApp/devops-upskill
+WorkingDirectory=/var/www/webApp
 Environment="PATH=/var/www/webApp/.venv/bin"
 ExecStart=/var/www/webApp/.venv/bin/gunicorn --workers 3 --bind unix:upskill.sock -m 007 wsgi:app
 
