@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.exc import OperationalError
 
 db = SQLAlchemy()
 
@@ -13,6 +14,12 @@ def create_app(config_name=None):
 
     app.register_blueprint(main_blueprint)
 
-    db.init_app(app)
+    while True:
+        try:
+            db.init_app(app)
+        except OperationalError:
+            db.create_all()
+            continue
+        break
 
     return app
