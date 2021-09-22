@@ -16,6 +16,7 @@ cd /var/www/webApp && poetry install
 cp /var/www/webApp/conf/upskill.service /etc/systemd/system/upskill.service
 cp /var/www/webApp/conf/upskill /etc/nginx/sites-available/upskill
 ln -s /etc/nginx/sites-available/upskill /etc/nginx/sites-enabled
+poetry run python create_db.py
 systemctl start upskill
 systemctl enable upskill
 systemctl restart nginx
