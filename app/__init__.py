@@ -11,7 +11,7 @@ def create_app(config_name=None):
 
     app = Flask(__name__)
     app.config[
-        'SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:plomza-rds-password@plomza-rds-postgre.cgpzlgzs9ybi.eu-central-1.rds.amazonaws.com:5432/postgres'
+        'SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:plomza-rds-password@plomza-rds.cgpzlgzs9ybi.eu-central-1.rds.amazonaws.com:5432/postgres'
 
     app.register_blueprint(main_blueprint)
 
