@@ -1,6 +1,7 @@
 import psycopg2
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.exc import OperationalError
 
 db = SQLAlchemy()
 
@@ -17,7 +18,7 @@ def create_app(config_name=None):
     while True:
         try:
             db.init_app(app)
-        except psycopg2.OperationalError:
+        except OperationalError:
             db.create_all()
             continue
         break
